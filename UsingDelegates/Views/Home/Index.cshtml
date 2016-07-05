@@ -1,0 +1,20 @@
+﻿@using UsingDelegates.Helpers
+@model List<UsingDelegates.Models.Product>
+@{
+    ViewBag.Title = "Home Page";
+}
+<hr />
+<table class="table table-bordered">
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+    </tr>
+    @Html.Repeater(Model, @<tr>
+        <td>@item.Title</td>
+        <td>@item.Price</td>
+    </tr>,
+    @<tr class="alert-info">
+        <td>@item.Title</td>
+        <td>@item.Price</td>
+    </tr>)
+</table>
